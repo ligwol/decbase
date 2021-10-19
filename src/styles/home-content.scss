@@ -1,0 +1,64 @@
+.home-main{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 60px;
+    .home-info{
+        flex-basis: 50%;
+        p{
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #646464;
+        }
+        .home-info__text{
+            padding: 20px 30px 20px 0;
+            font-family: 'Open Sans';
+            font-size: 18px;
+            line-height: 30px;
+            color: #646464;
+        }
+        .home-info__contact{
+            background-color: #37806B;
+            width: 100px;
+            cursor: pointer;
+            justify-content: start;
+            margin: 0;
+            transition: 300ms ease;
+            &:hover{
+                background-color: #fff;
+                color: #37806b;
+            }
+        }
+    }
+
+    .home-images{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        
+        img{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 400px;
+            width: 458px;
+            border-radius: 100px 0px;
+            z-index: 5;
+        }
+        .home-images__border{
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            height: 400px;
+            width: 458px;
+            border: 2px solid #B0855B ;
+            border-radius: 100px 0px;
+            z-index: 4;
+        }
+    }
+}
+
+.our-service{
+    margin: 60px;
+
+}
