@@ -1,6 +1,6 @@
 <template>
-    <div class="home-main">
-        <div class="home-info">
+    <div class="home-main half__block">
+        <div class="home-info block__info">
             <p>Modern Interior</p>
             <h1>Create your Interior Design.</h1>
             <div class="home-info__text">
@@ -8,16 +8,16 @@
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                 veniam, quis nostrud exercitation.
             </div>
-            <div class="home-info__contact button" v-on:click="toggleContact" >
+            <button v-on:click="toggleContact" >
                 Contact
-            </div>
+            </button>
             <ContactUs v-if="!isHidden"/>
             
         </div>
-        <div class="home-images">
+        <div class="home-images block__img">
             <div class="home-images__block">
-                <img src="../../assets/image-1.png" alt="furniture">
-                <div class="home-images__border"></div>
+                <img class=" right" src="../../assets/image-1.png" alt="furniture">
+                <div class="home-images__border right-border"></div>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         },
         data() {
             return {
-                isHidden: false
+                isHidden: true
             }
         }, 
         methods: {

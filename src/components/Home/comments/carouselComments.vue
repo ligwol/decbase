@@ -1,47 +1,52 @@
 <template>
-  <div class="wrapper">
-    <div class="wrapper__nav">
-        <button @click="prevSlide" v-bind:disabled="currentSlideIndex<=1" class="wrapper__prev">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button @click="nextSlide" v-bind:disabled="currentSlideIndex>=2" class="wrapper__next">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
+    <div class="wrapper">
+        <div class="wrapper__nav">
+            <button @click="prevSlide" v-bind:disabled="currentSlideIndex<=1" class="wrapper__prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button @click="nextSlide" v-bind:disabled="currentSlideIndex>=2" class="wrapper__next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
-    <!-- <div class="v-carousel" :style="{'margin-left': '-' + (100 * currentSlideIndex) + '%'}"> -->
-    <!-- :class="{active: currentSlideIndex === item.id}" -->
-    <div class="v-carousel">
-        <v-carousel-item
-            v-for="item in carousel_data"
-            :key="item.id"
-            :item_data="item"
-            :class="{active: currentSlideIndex !== item.id}"
-        />
-      </div>
-  </div>
+        <div class="carousel">
+            <carouselCommentsItems 
+                v-for="item in carousel_data"
+                :key="item.id"
+                :item_data="item"
+                :class="{active: currentSlideIndex === item.id}"
+            />
+            <carouselCommentsItems 
+                v-for="item in carousel_data"
+                :key="item.id"
+                :item_data="item"
+                :class="{active: (currentSlideIndex+2) === item.id}"
+            />
+        </div>
+    </div>
+  
 </template>
 
 <script>
-import vCarouselItem from './v-carousel-item'
+import carouselCommentsItems from './carouselCommentsItems.vue'
 export default {
-    name: "v-carousel",
-    components: {
-        vCarouselItem,
-    },
+    name: 'carouselComments',
     props: {
         carousel_data: {
             type: Array,
-            default: () => []
+            default: () => [],
         }
     },
+    components: {
+        carouselCommentsItems,
+    }, 
     methods: {
         prevSlide() {
-            this.currentSlideIndex-=3;
+            this.currentSlideIndex--;
             console.log(this.currentSlideIndex);
         },
         nextSlide() {
-            this.currentSlideIndex+=3;
+            this.currentSlideIndex++;
             console.log(this.currentSlideIndex);
         }
     },
@@ -50,16 +55,15 @@ export default {
             currentSlideIndex: 1
         }
     }
-
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .wrapper{
         overflow: hidden;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0 100px 40px 100px;
         max-width: 100vw;
-        padding: 0 0 40px 0;
         .wrapper__nav{
             margin: 30px 0;
             display: flex;
@@ -89,8 +93,8 @@ export default {
         }
         }
     }
-    .v-carousel{
+    .carousel{
         display: flex;
-        gap: 20px;
+        gap: 90px;
     }
 </style>

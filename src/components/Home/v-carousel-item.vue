@@ -3,7 +3,6 @@
         <div class="comment-blocks">
             <div class="block">
                 <div class="block__img">
-                    <!-- <img :src= "require('../../assets/'+ item_data.img)"> -->
                     <img :src= "require('../../assets/'+ item_data.img)" :alt= "item_data.alt">
                 </div>
                 <div class="block__txt">
@@ -27,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .v-carousel-item{
         display: none;    
         &.active{

@@ -35,15 +35,72 @@ a {
     }
 }
 
-.button {
+button {
     border-radius: 15px 0px;
+    border-width: 0;
+    background-color: #37806B;
     padding: 5px 20px;
     color: #fff;
     font-weight: 600;
     font-size: 16px;
     text-transform: capitalize;
     text-align: center;
+    transition: 300ms ease;
     &:hover {
         background-color: #fff;
+        color: #646464;
+    }
+}
+
+.half__block{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 60px;
+    .block__info{
+        flex-basis: 50%;
+    }
+    .block__img{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            width: 458px;
+            border-radius: 100px 0px;
+            z-index: 5;
+        }
+        .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 400px;
+            width: 458px;
+            border-radius: 100px 0px;
+            z-index: 5;
+        }
+        .right-border{
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            height: 400px;
+            width: 458px;
+            border: 2px solid #B0855B ;
+            border-radius: 100px 0px;
+            z-index: 4;
+        }
+        .left-border{
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            height: 400px;
+            width: 458px;
+            border: 2px solid #B0855B ;
+            border-radius: 100px 0px;
+            z-index: 4;
+        }
     }
 }
