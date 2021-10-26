@@ -5,7 +5,9 @@
     <OurService />
     <AboutUs />
     <Scheme />
-    <Comments />
+    <Testimonials />
+    <LatestNews />
+    <Subscribe />
   </div>
 </template>
 
@@ -15,7 +17,9 @@ import HomeContent from '@/components/Home/HomeContent.vue'
 import OurService from '@/components/Home/OurService.vue'
 import AboutUs from '@/components/Home/AboutUs.vue'
 import Scheme from '@/components/Home/Scheme.vue'
-import Comments from '@/components/Home/Comments.vue'
+import Testimonials from '@/components/Home/Testimonials.vue'
+import LatestNews from '@/components/Home/LatestNews.vue'
+import Subscribe from '@/components/Home/Subscribe.vue'
 
 export default {
   name: 'Home',
@@ -25,7 +29,9 @@ export default {
     OurService,
     AboutUs,
     Scheme,
-    Comments,
+    Testimonials, 
+    LatestNews,
+    Subscribe,
   }
 }
 </script>

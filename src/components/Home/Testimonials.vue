@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+  <div class="testimonials">
       <h2>
           TESTIMONIALS
       </h2>
@@ -15,7 +15,7 @@
 <script>
 import carouselComments from './comments/carouselComments.vue'
 export default {
-    name: 'Comments',
+    name: 'Testimonials',
     components: { 
         carouselComments,
         },
