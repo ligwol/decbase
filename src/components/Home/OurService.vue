@@ -1,6 +1,6 @@
 <template>
     <div class="our-service">
-        <p>what we do</p>
+        <h2>what we do</h2>
         <h1>Our Service</h1>
         <v-carousel :carousel_data="services"></v-carousel>
     </div>

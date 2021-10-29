@@ -9,7 +9,7 @@
       </p>
       <div class="subscribe__field">
           <form class="subscribe__form">
-              <input type="email" class="form__input" placeholder="Enter your email address.....">
+              <input type="email" class="form__input" placeholder="Enter your email address...">
               <input type="submit" class="form__button">
           </form>
       </div>
@@ -61,12 +61,13 @@ export default {
                     border: none;
                     padding: 10px;
                     width: 150px;
-                    font-family: Open Sans;
+                    font-family: 'Open Sans';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 16px;
                     text-align: center;
                     color: #FFFFFF;
+                    cursor: pointer;
                 }
             }
         }
