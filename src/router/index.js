@@ -45,6 +45,26 @@ const routes = [
     name: 'Authorization',
     component: () => import('../views/Authorization.vue')
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Authorization/Login.vue')
+  },
+  {
+    path: '/sign-up',
+    name: 'SignUp',
+    component: () => import('../views/Authorization/SignUp.vue')
+  },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: () => import('../views/Authorization/ResetPassword.vue')
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: () => import('../views/Authorization/Account.vue')
+  },
 ]
 
 const router = createRouter({
