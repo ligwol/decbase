@@ -29,6 +29,11 @@
             </div>
             <button type="submit" @click="register"> Sign In </button>
           </form>
+          <ErrorMessage 
+                :message="msgError" 
+                :isError="isError"
+                @hide = "hideError"
+                />
         </div>
       </div>
       </div>
@@ -43,35 +48,50 @@
 <script>
 import 'animate.css';
 import "firebase/auth"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import AHeader from '@/components/Authorization/AHeader.vue'
+import ErrorMessage from '@/components/Authorization/ErrorMessage.vue'
 
 export default {
   name: 'SignUp',
   components: {
     AHeader,
+    ErrorMessage,
   },
   data() {
     return{
       username: '',
       email: '',
       password: '',
+      isError: false,
+      msgError: 'Error'
     }
   },
   methods: {
-    async register(){
+    register(){
       console.log("WORK");
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.email, this.password)
               .then(() => {
-                console.log("success")
+                  console.log("success");
+                  this.isError = false;
+                  this.msgError = '';
+                  updateProfile (auth.currentUser, {
+                    displayName: this.username
+                  })
+                  .then(() => {
+                    this.$router.push('/login')
+                    console.log("WE R HERE")
+                  })
               })
               .catch(err => {
-                console.log("FAIL GIRL");
-                console.error(err)
+                console.log("FAIL GIRL" + err);
+                
+                this.isError = true;
+                this.msgError = err.message;
               })
 
-    }
+    },
   }
 }
 </script>

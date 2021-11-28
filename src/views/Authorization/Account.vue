@@ -5,7 +5,7 @@
         <div class="border-second">
         <div class="form__block">
           <p>
-            Welcome, Username
+            Welcome, {{user.displayName}}
           </p>
           <h1>
             Create Your Decbase Account
@@ -18,7 +18,7 @@
                         type="email" 
                         placeholder="Email"
                         readonly
-                        value="username@domain.com"
+                        :value="user.email"
                 >
               </div>
             </div>
@@ -38,7 +38,8 @@
 
 <script>
 import AHeader from '@/components/Authorization/AHeader.vue';
-import { getAuth, signOut } from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import {} from 'firebase/firestore';
 export default {
     name: 'Account',
     components: {
@@ -46,8 +47,20 @@ export default {
     },
     data() {
         return {
-            user: null
+            user: null,
         }
+    },
+    created() {
+        const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user)
+                this.user = user;
+            } else {
+                this.user = null;
+                this.$router.push('/login'); 
+            }
+            });
     },
     methods: {
         async logOut(){
@@ -55,8 +68,11 @@ export default {
         const auth = getAuth();
         signOut(auth)
                 .then(() => {
-                    console.log("success");
-                    this.$router.push('/login');
+                    console.log("log in success");
+                    onAuthStateChanged(auth, ()  => {
+                        this.$router.push('/login'); 
+                        console.log("log in is okay");
+                    });
                 })
                 .catch(err => {
                     console.log("FAIL TO LOG OUT GIRL");

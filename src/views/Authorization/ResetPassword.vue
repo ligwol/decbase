@@ -17,11 +17,16 @@
                 <input type="email" placeholder="Email" v-model="email">
               </div>
             </div>
-            <button> 
+            <button type="submit" @click="resetPassword"> 
               <i class="fas fa-undo"></i>
               Reset 
             </button>
           </form>
+          <ErrorMessage 
+                :message="msgError" 
+                :isError="isError"
+                @hide = "hideError"
+                />
         </div>
       </div>      
     </div>
@@ -32,8 +37,35 @@
 </template>
 
 <script>
+import ErrorMessage from '@/components/Authorization/ErrorMessage.vue'
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 export default {
-    name: 'ResetPassword'
+    name: 'ResetPassword',
+    components: {
+      ErrorMessage,
+    },
+    data() {
+    return{
+      email: '',
+      isError: false,
+      msgError: 'Error'
+    }
+  },
+  methods: { 
+    resetPassword() {
+      const auth = getAuth();
+      sendPasswordResetEmail(auth, this.email)
+      .then(() => {
+        console.log("reset was sent")
+        this.email='';
+      })
+      .catch((err) => {
+        this.isError = true;
+        this.msgError = err.message;
+        console.log("FAIL TO LOGIN GIRL" +    err);
+      });
+    }
+  } 
 }
 </script>
 

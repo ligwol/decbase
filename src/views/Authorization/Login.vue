@@ -23,12 +23,17 @@
                 <input type="password" placeholder="Password" v-model="password">
               </div>
             </div>
-            <div v-if="error" class="alert">
+            <!-- <div v-if="error" class="alert">
               {{errorMsg}}
               ERROR
-            </div>
+            </div> -->
             <button type="submit" @click="login"> Sign In </button>
           </form>
+          <ErrorMessage 
+                :message="msgError" 
+                :isError="isError"
+                @hide = "hideError"
+                />
           <p>
             Forgot the password? 
             <router-link to="/reset-password">Click here</router-link>
@@ -49,17 +54,20 @@ import 'animate.css';
 import "firebase/auth"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import AHeader from '@/components/Authorization/AHeader.vue'
+import ErrorMessage from '@/components/Authorization/ErrorMessage.vue'
 export default {
   name: 'Login',
   components: {
     AHeader,
+    ErrorMessage,
   },
   data() {
     return{
       email: '',
       password: '',
-      error: false,
-      errorMsg: '',
+      isError: false,
+      msgError: 'Error'
+
     }
   }, 
   methods: {
@@ -73,11 +81,11 @@ export default {
               })
               .catch(err => {
                 console.log("FAIL TO LOGIN GIRL");
-                this.error = true,
-                this.errorMsg = err.message,
+                this.isError = true,
+                this.msgError = err.message,
                 console.error(err)
               })
-    }
+    },
   }
 
 }
