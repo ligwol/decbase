@@ -51,7 +51,7 @@ import vCarousel from './v-carousel'
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "./../../styles/style.scss";
     @import "./../../styles/header.scss";
     @import "./../../styles/home-content.scss";

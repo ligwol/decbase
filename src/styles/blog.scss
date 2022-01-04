@@ -1,0 +1,28 @@
+
+.form-post{
+    width: 80%;
+    padding-bottom: 40px;
+    .form-post__form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        #new-post{
+            resize: none;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        #new-title{
+            resize: none;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        #new-image input[type=file]{
+            display: none;
+        }
+        label{
+            margin: 0;
+        }
+    }
+}

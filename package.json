@@ -12,6 +12,8 @@
     "core-js": "^3.6.5",
     "firebase": "^9.2.0",
     "firebaseui": "^6.0.0",
+    "primeicons": "^5.0.0",
+    "primevue": "^3.10.0",
     "v-animate-css": "0.0.5",
     "vue": "^3.2.20",
     "vue-carousel": "^0.18.0",

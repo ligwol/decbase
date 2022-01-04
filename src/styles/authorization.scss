@@ -10,6 +10,13 @@
       padding: 50px;
       display: flex;
       flex-direction: row;
+      .authorization__header__link{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #3f3f3f;
+        font-weight: 600;
+        cursor: pointer;
+      }
     }
     .authorization__form {
       flex-basis: 50%;
@@ -26,6 +33,10 @@
               font-size: 16px;
               a{
                 text-transform: none;
+                cursor: pointer;
+                text-decoration: none;
+                color: #3f3f3f;
+                font-weight: bold;
               }
             }
             h1 {

@@ -1,10 +1,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+
+import PrimeVue from 'primevue/config';
+import FileUpload from 'primevue/fileupload';
+import TextArea from 'primevue/textarea';
+
+
+const app = createApp(App);
 // v9 compat packages are API compatible with v8 code
 import { initializeApp } from 'firebase/app';
+import { getFirestore } from "firebase/firestore"
 import {getAuth} from 'firebase/auth';
-import Vue from 'vue';
+import Vue from 'vue'; 
 
 import VAnimateCss from 'v-animate-css';
 
@@ -21,11 +29,16 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore();
 
-export default getAuth(firebaseApp);
+export default getAuth(firebaseApp, db);
 new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
 
 Vue.use(VAnimateCss);
+
+app.use(PrimeVue);
+app.component('FileUpload', FileUpload);
+app.component('TextArea', TextArea);
