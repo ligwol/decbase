@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import PrimeVue from 'primevue/config';
+import Dialog from 'primevue/dialog';
 import FileUpload from 'primevue/fileupload';
 import TextArea from 'primevue/textarea';
 
@@ -40,5 +41,6 @@ new Vue({
 Vue.use(VAnimateCss);
 
 app.use(PrimeVue);
+app.component('Dialog', Dialog);
 app.component('FileUpload', FileUpload);
 app.component('TextArea', TextArea);

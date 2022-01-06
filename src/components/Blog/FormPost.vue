@@ -1,10 +1,11 @@
 <template>
-    <form @submit.prevent="addNewPost" class="form-post">
+    <form @submit="addNewPost" class="form-post">
         <div class="form-post__form">
             <input id="new-title" rows="1" v-model="newTitle" placeholder="Title"/>
             <input id="new-post" rows="7" v-model="newContent" placeholder="Tell us latest news"/>
             <input id="new-photo" rows="1" v-model="newPhoto" placeholder="Photo"/>
-            <!-- <FileUpload name="demo[]" url="./upload" :multiple="true" /> -->
+            <!-- <FileUpload name="demo[]" url="./upload" /> -->
+            <!-- <Dialog><FileUpload name="demo[]" url="./upload" /> </Dialog> -->
         </div>
         <div class="form-post__button">
             <Button label="Create" @click="addNewPost" />
@@ -20,14 +21,16 @@
 <script>
 import Button from 'primevue/button';
 //import Textarea from 'primevue/textarea';
-//import FileUpload from 'primevue/fileupload';
-import { getFirestore, collection, addDoc, } from "firebase/firestore"
+// import FileUpload from 'primevue/fileupload';
+// import Dialog from 'primevue/dialog/sfc';
+import { getFirestore, collection, addDoc } from "firebase/firestore"
 
 export default {
     name: 'FormPost',
     components: {
         Button,
-        //FileUpload,
+        // Dialog,
+        // FileUpload,
         //Textarea,
     },
     data() {
@@ -38,12 +41,12 @@ export default {
             newTitle: '',
             newContent: '',
             newPhoto: '',
+            date: '',
         }
     },
     methods: {
         async addNewPost(){
-            console.log('Title: ' + this.newTitle);
-            console.log('Content: ' + this.newContent);
+            let today = Date.now();
             const firestore = getFirestore();
             const articlesDocs = collection(firestore, 'articles');
             const localTitle = this.newTitle;
@@ -57,19 +60,14 @@ export default {
                     title: localTitle,
                     content: localContent,
                     image: localPhoto,
+                    date: today,
                 })
                 console.log(`Doc created at + ${newDoc.path}`);
+                window.location.reload();
             }
-            // async function readASingleDocument(){
-            //     const mySnapshot = await getDocs(articlesDocs);
-            //     if (mySnapshot.exists()) {
-            //         const docData = mySnapshot.data();
-            //         console.log(`My data is${JSON.stringify(docData)}`);
-            //     }
-            // }
             addNewDocument();
             // readASingleDocument();
-        }
+        },
     }
 }
 </script>
