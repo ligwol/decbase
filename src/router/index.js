@@ -30,6 +30,11 @@ const routes = [
     name: 'Blog',
     component: () => import('../views/Blog.vue')
   },
+  // {
+  //   path: '/blog-admin',
+  //   name: 'BlogAdmin',
+  //   component: () => import('../views/Admin/BlogAdmin.vue')
+  // },
   {
     path: '/shop',
     name: 'Shop',

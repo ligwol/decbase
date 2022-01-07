@@ -11,12 +11,14 @@
             width: 100%;
             margin: 20px auto;
             padding: 20px;
+            font-size: 14px;
         }
-        #new-title{
+        #new-title, #new-photo{
             resize: none;
             width: 100%;
             margin: 20px auto;
             padding: 20px;
+            font-size: 14px;
         }
         #new-image input[type=file]{
             display: none;

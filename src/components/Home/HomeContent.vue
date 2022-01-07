@@ -38,8 +38,13 @@
         methods: {
             toggleContact: function(){
                 this.isHidden = !this.isHidden;
-            }
-        }
+                if(!this.isHidden){
+                    window.onscroll = function () { window.scrollTo(0, 0); };
+                } else{
+                    window.onscroll = function () { window.scrollTop(0); };
+                }
+            },
+        },
     }
 </script>
 
