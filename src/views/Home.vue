@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header />
+    <Header/>
     <HomeContent />
     <OurService />
     <AboutUs />
@@ -35,6 +35,6 @@ export default {
     LatestNews,
     Subscribe,
     Footer,
-  }
+  }, 
 }
 </script>

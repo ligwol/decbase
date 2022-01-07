@@ -1,27 +1,71 @@
 <template>
-    <div class="header">
-        <div class="header-logo">
-            <img src="../../assets/logo-full.png" alt="logo">
+
+    <HeaderMobile v-if="!isHidden"/>
+    <div class="hdr">
+        <div class="header" v-if="!mobileView">
+            <div class="header-logo">
+                <img src="../../assets/logo-full.png" alt="logo">
+            </div>
+            <div class="header-link">
+                <router-link to="/" class="link">Home</router-link>
+                <router-link to="/project" class="link">Project</router-link>
+                <router-link to="/services" class="link">Services</router-link>
+                <router-link to="/about" class="link">About</router-link> 
+                <router-link to="/blog" class="link">Blog</router-link>
+                <router-link to="/project" class="link">Shop</router-link>
+                <router-link to="/contact" class="link">Contact</router-link>
+            </div>
+            <div class="header-signin">
+                <router-link to="/authorization" class="link">Sign In</router-link>
+            </div>
         </div>
-        <div class="header-link">
-            <router-link to="/" class="link">Home</router-link>
-            <router-link to="/project" class="link">Project</router-link>
-            <router-link to="/services" class="link">Services</router-link>
-            <router-link to="/about" class="link">About</router-link> 
-            <router-link to="/blog" class="link">Blog</router-link>
-            <router-link to="/project" class="link">Shop</router-link>
-            <router-link to="/contact" class="link">Contact</router-link>
+        <div class="header__click-button" v-if="mobileView" v-on:click="toggleNav">
+           <!-- <i class="fas fa-ellipsis-v"></i> -->
+           <span></span>
+           <span></span>
+           <span></span>
         </div>
-        <div class="header-signin">
-            <router-link to="/authorization" class="link">Sign In</router-link>
-        </div>
-         
     </div>
 </template>
 
 <script>
+import HeaderMobile  from './Mobile/HeaderMobile.vue'
 export default{
     name: 'Header',
+    components: {
+        HeaderMobile,
+    },
+    data: function(){
+        return{
+            isHidden: true,
+            showNav: false,
+            mobileView: false,
+        }
+    },
+    mounted() {
+        this.handleView();
+    },
+    methods: {
+        toggleNav: function(){
+            this.isHidden = !this.isHidden;
+            if(!this.isHidden){
+                window.onscroll = function () { window.scrollTo(0, 0); };
+            } else{
+            window.onscroll = function () { window.scrollTop(0); };
+            }
+        },
+        handleView() {
+            if(window.innerWidth <= 1140){
+                this.mobileView = true;
+            }else{
+                this.mobileView = false;
+            }
+            console.log('window size: ' + window.innerWidth);
+        },
+    },
+    computed: {
+
+    }
 }
 </script>
 

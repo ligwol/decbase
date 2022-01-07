@@ -66,6 +66,7 @@
             background-color: #fff;
             height: 400px;
             width: 450px;
+            border-radius: 100px 0px;
             .contact-us__button {
                 display: flex;
                 align-items: flex-start;

@@ -39,9 +39,9 @@
             toggleContact: function(){
                 this.isHidden = !this.isHidden;
                 if(!this.isHidden){
-                    window.onscroll = function () { window.scrollTo(0, 0); };
+                    window.onscroll = window.scrollTo(0, 0);
                 } else{
-                    window.onscroll = function () { window.scrollTop(0); };
+                    window.onscroll = window.scrollTop(0);
                 }
             },
         },
@@ -52,4 +52,5 @@
 <style lang="scss" scoped>
     @import "./../../styles/style.scss";
     @import "./../../styles/home-content.scss";
+    @import "./../../styles/adaptive/adaptive-home.scss";
 </style>
