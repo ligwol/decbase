@@ -1,7 +1,8 @@
 <template>
   <div class="authorization">
-    <AHeader />
     <div class="animation__form-slidein authorization__form">
+      
+    <AHeader />
       <div class="border-first">
         <div class="border-second">
         <div class="form__block">
@@ -99,6 +100,7 @@ export default {
 <style lang="scss">
 
   @import "./../../styles/authorization.scss";
+  @import "./../../styles/adaptive/adaptive-auth.scss";
 
   .animation__image1 {
     animation: fadeInRight;

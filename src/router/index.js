@@ -8,6 +8,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/home-admin',
+    name: 'HomeAdmin',
+    component: () => import('../views/Admin/HomeAdmin.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
@@ -30,11 +35,11 @@ const routes = [
     name: 'Blog',
     component: () => import('../views/Blog.vue')
   },
-  // {
-  //   path: '/blog-admin',
-  //   name: 'BlogAdmin',
-  //   component: () => import('../views/Admin/BlogAdmin.vue')
-  // },
+  {
+    path: '/blog-admin',
+    name: 'BlogAdmin',
+    component: () => import('../views/Admin/BlogAdmin.vue')
+  },
   {
     path: '/shop',
     name: 'Shop',
@@ -44,11 +49,6 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: () => import('../views/Contact.vue')
-  },
-  {
-    path: '/authorization',
-    name: 'Authorization',
-    component: () => import('../views/Authorization.vue')
   },
   {
     path: '/login',

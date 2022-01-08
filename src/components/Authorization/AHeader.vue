@@ -1,21 +1,60 @@
 <template>
-      <div class="authorization__header">
-        <router-link class="authorization__header__link" to="/"> Home </router-link>
-        <router-link class="authorization__header__link" to="/Project"> Project </router-link>
-        <router-link class="authorization__header__link" to="/services"> services </router-link>
-        <router-link class="authorization__header__link" to="/About"> about </router-link>
-        <router-link class="authorization__header__link" to="/Blog"> blog </router-link>
-        <router-link class="authorization__header__link" to="/Shop"> shop </router-link>
-        <router-link class="authorization__header__link" to="/Contact"> contact </router-link>
-      </div>
+  <AHeaderMobile v-if="!isHidden" />
+  <div class="authorization__header">
+    <div class="authorization__header__links" v-if="!mobileView">
+      <router-link class="authorization__header__link" to="/"> Home </router-link>
+      <router-link class="authorization__header__link" to="/Project"> Project </router-link>
+      <router-link class="authorization__header__link" to="/services"> services </router-link>
+      <router-link class="authorization__header__link" to="/Blog"> blog </router-link>
+      <router-link class="authorization__header__link" to="/Shop"> shop </router-link>
+    </div>
+    <div class="header__click-button" v-if="mobileView" v-on:click="toggleANav">
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
+  </div>
+
 </template>
 
 <script>
+import AHeaderMobile  from './AHeaderMobile.vue'
 export default {
     name: 'AHeader',
+    components: {
+      AHeaderMobile,
+    },
+    data: function(){
+        return{
+            isHidden: true,
+            showNav: false,
+            mobileView: false,
+        }
+    },
+    mounted() {
+        this.handleView();
+    },
+    methods: {
+        toggleANav: function(){
+            this.isHidden = !this.isHidden;
+            if(!this.isHidden){
+                window.onscroll = function () { window.scrollTo(0, 0); };
+            } else{
+            window.onscroll = function () { window.scrollTop(0); };
+            }
+        },
+        handleView() {
+            if(window.innerWidth <= 1100){
+                this.mobileView = true;
+            }else{
+                this.mobileView = false;
+            }
+            console.log('window size: ' + window.innerWidth);
+        },
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @import "./../../styles/authorization.scss";
+@import "./../../styles/adaptive/adaptive-auth.scss";
+
 </style>

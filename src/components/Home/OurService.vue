@@ -2,16 +2,40 @@
     <div class="our-service">
         <h2>what we do</h2>
         <h1>Our Service</h1>
-        <v-carousel :carousel_data="services"></v-carousel>
+        <v-carousel :carousel_data="services" v-if="!mobileView"></v-carousel>
+        <carousel :items-to-show="1" v-if="mobileView">
+            <slide v-for="title in services" :key="title">
+                <div class="block">
+                    <div class="block__img">
+                        <img class=" right" :src="require('../../assets/'+ title.img)" alt="furniture pic">
+                        <p>{{title.title}}</p>
+                    </div>
+                    <div class="block__txt">
+                        <p>{{title.content}}</p>
+                    </div>
+                </div>
+            </slide>
+
+            <template #addons>
+            <navigation />
+            <!-- <pagination /> -->
+            </template>
+        </carousel>
     </div>
 </template>
 
 <script>
-import vCarousel from './v-carousel'
+import vCarousel from './comments/v-carousel'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
     export default {
         name: 'OurService',
         components: {
             vCarousel,
+            Carousel,
+            Slide,
+            // Pagination,
+            Navigation,
         },
         data() {
             return {
@@ -46,8 +70,22 @@ import vCarousel from './v-carousel'
                     },
                     
                 ],
+                mobileView: false,
             }
         },
+        mounted() {
+            this.handleView();
+        },
+        methods: {
+            handleView() {
+                if(window.innerWidth <= 1140){
+                    this.mobileView = true;
+                }else{
+                    this.mobileView = false;
+                }
+                console.log('window size: ' + window.innerWidth);
+            },
+        }
     }
 </script>
 
@@ -55,5 +93,6 @@ import vCarousel from './v-carousel'
     @import "./../../styles/style.scss";
     @import "./../../styles/header.scss";
     @import "./../../styles/home-content.scss";
+    @import "./../../styles/adaptive/adaptive-home.scss";
 
 </style>

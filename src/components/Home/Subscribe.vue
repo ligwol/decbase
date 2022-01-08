@@ -25,51 +25,6 @@ export default {
 <style lang="scss" scoped>
     @import "./../../styles/style.scss";
     @import "./../../styles/home-content.scss";
+    @import "./../../styles/adaptive/adaptive-home.scss";
 
-    .subscribe{
-        padding: 150px 60px;
-        text-align: center;
-        hr{
-            margin: 50px auto;
-            width: 50vw;
-            border: 1px solid #C4C4C4;
-        }
-        p{
-            padding-bottom: 40px;
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-            color: #646464;
-            text-transform: none;
-        }
-        .subscribe__field{
-            .subscribe__form{
-                .form__input{
-                    background: #EEEEEE;
-                    border-radius: 20px 0px 0px;
-                    border: none;
-                    padding: 10px 20px;
-                    width: 650px;
-                    font-size: 16px;
-                }
-                .form__button{
-                    background: #37806B;
-                    border-radius: 0px 0px 20px 0px;
-                    border: none;
-                    padding: 10px;
-                    width: 150px;
-                    font-family: 'Open Sans';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 16px;
-                    text-align: center;
-                    color: #FFFFFF;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
 </style>

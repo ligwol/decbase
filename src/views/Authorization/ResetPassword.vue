@@ -1,6 +1,8 @@
 <template>
   <div class="authorization">
     <div class="border-first authorization__form animation__slidein">
+        
+        <AHeader />
         <div class="border-second">
         <div class="form__block">
           <p>
@@ -38,11 +40,13 @@
 
 <script>
 import ErrorMessage from '@/components/Authorization/ErrorMessage.vue'
+import AHeader from '@/components/Authorization/AHeader.vue'
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 export default {
     name: 'ResetPassword',
     components: {
       ErrorMessage,
+      AHeader,
     },
     data() {
     return{
@@ -71,6 +75,7 @@ export default {
 
 <style lang="scss">
 @import "./../../styles/authorization.scss";
+@import "./../../styles/adaptive/adaptive-auth.scss";
 .animation__slidein {
   animation: fadeInDownBig;
   animation-duration: 2s; 

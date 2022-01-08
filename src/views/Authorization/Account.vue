@@ -1,6 +1,6 @@
 <template>
+  <HeaderAdmin />
   <div class="authorization">
-      <AHeader />
     <div class="border-first authorization__form animation__slidein">
         <div class="border-second">
         <div class="form__block">
@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import AHeader from '@/components/Authorization/AHeader.vue';
+import HeaderAdmin from '@/components/Admin/HeaderAdmin.vue';
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import {} from 'firebase/firestore';
 export default {
     name: 'Account',
     components: {
-        AHeader,
+        HeaderAdmin,
     },
     data() {
         return {
@@ -87,4 +87,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "./../../styles/authorization.scss";
+@import "./../../styles/adaptive/adaptive-auth.scss";
 </style>

@@ -23,7 +23,7 @@
                       magna aliqua.
                   </p>
                   <button>
-                      Continue reading...
+                      <router-link to="/blog" class="link">Continue reading...</router-link>
                   </button>
               </div>
           </div>
@@ -43,7 +43,7 @@
                       magna aliqua.
                   </p>
                   <button>
-                      Continue reading...
+                      <router-link to="/blog" class="link">Continue reading...</router-link>
                   </button>
               </div>
           </div>
@@ -60,76 +60,6 @@ export default {
 <style lang="scss" scoped>
     @import "./../../styles/style.scss";
     @import "./../../styles/home-content.scss";
+    @import "./../../styles/adaptive/adaptive-home.scss";
 
-    .latest-news{
-        text-align: center;
-        padding: 80px 60px 100px 60px;
-        background-color: #f8f8f8;
-        .latest-news__blocks{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-            .latest-news__block{
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                .latest-news__img{
-                    margin: 40px 0;
-                    .center{
-                        position: absolute;
-                        top: -20px;
-                        right: 20px;
-                        height: auto;
-                        width: 450px;
-                        border-radius: 100px 0px;
-                        z-index: 5;
-                    }
-                    .border{
-                        position: relative;
-                        height: 315px;
-                        width: 450px;
-                        border: 2px solid #B0855B;
-                        border-radius: 100px 0px;
-                        z-index: 4;
-                    }
-                }
-                .latest-news__txt{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    .title{
-                        margin: 0;
-                        font-family: 'Open Sans';
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 28px;
-                        line-height: 28px;
-                        color: #212121;
-                        padding-top: 20px;
-                    }
-                    .content{
-                        font-family: Open Sans;
-                        font-style: normal;
-                        font-weight: normal;
-                        text-transform: none;;
-                        font-size: 18px;
-                        line-height: 28px;
-                        color: #646464;
-                        padding-top: 20px;
-                    }
-                    button{
-                        text-transform: uppercase;
-                        margin: 20px 0 0 0;
-                        font-size: 16px;
-                        font-weight: 600;
-                        &:hover{
-                            background-color: #f8f8f8;
-                        }
-                    }
-                }
-            }
-        }
-    }
 </style>

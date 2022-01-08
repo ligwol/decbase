@@ -1,6 +1,7 @@
 <template>
+    
   <div class="authorization">
-    <div >
+    <div class="authorization__form">
       <AHeader />
       <div class="border-first authorization__form animation__slidein">
         <div class="border-second">
@@ -16,7 +17,7 @@
             <div class="inputs">
               <div class="input email">
                 <i class="fas fa-at"></i>
-                <input type="email" placeholder="Email" v-model="email">
+                <input type="email" placeholder="Email" v-model="email" class="top-input">
               </div>
               <div class="input password">
                 <i class="fas fa-key"></i>
@@ -93,6 +94,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "./../../styles/authorization.scss";
+@import "./../../styles/adaptive/adaptive-auth.scss";
 .animation__slidein {
   animation: fadeInDownBig;
   animation-duration: 2.5s; 

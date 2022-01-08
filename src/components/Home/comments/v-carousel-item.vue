@@ -3,7 +3,7 @@
         <div class="comment-blocks">
             <div class="block">
                 <div class="block__img">
-                    <img :src= "require('../../assets/'+ item_data.img)" :alt= "item_data.alt">
+                    <img :src= "require('../../../assets/'+ item_data.img)" :alt= "item_data.alt">
                 </div>
                 <div class="block__txt">
                     <h2>{{item_data.title}}</h2>

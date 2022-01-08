@@ -29,11 +29,21 @@ export default {
     components: {
         vCarouselItem,
     },
+    data() {
+        return{
+            currentSlideIndex: 1,
+            isHidden: true,
+            mobileView: false,
+        }
+    },
     props: {
         carousel_data: {
             type: Array,
             default: () => []
         }
+    },
+    beforeMount: function(){
+        this.handleView();
     },
     methods: {
         prevSlide() {
@@ -43,13 +53,16 @@ export default {
         nextSlide() {
             this.currentSlideIndex+=3;
             console.log(this.currentSlideIndex);
-        }
+        },
+        handleView() {
+            if(window.innerWidth <= 1140){
+                this.mobileView = true;
+            }else{
+                this.mobileView = false;
+            }
+            console.log('window size: ' + window.innerWidth);
+        },
     },
-    data() {
-        return{
-            currentSlideIndex: 1
-        }
-    }
 
 }
 </script>
