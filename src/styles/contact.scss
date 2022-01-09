@@ -1,0 +1,80 @@
+.contact-form{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contact-form__intro{
+        h2{
+
+        }
+        p{
+            font-family: 'Poppins';
+            margin: 0;
+        }
+    }
+    .contact-form__form{
+        display: flex;
+        flex-direction: column;
+        input, .message{
+            margin: 10px;
+            padding: 20px;
+            width: 600px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .message{
+            resize: none;
+        }
+    }
+}
+
+.contact-info{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans';
+    .contact-info__data{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+        .contact-info__phone, .contact-info__email{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-right: 20px;
+            p{
+                padding-right: 10px;
+                i{
+                    color: #646464;
+                }
+            }
+            a{
+                color: #646464;
+            }
+        }
+    }
+}
+
+.contact-messages{
+    font-family: 'Poppins';
+    color: #646464;
+    margin: 50px;
+    .messages{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        .message__info{
+            padding: 30px;
+            margin: 15px 20px;
+            border-radius: 20px 50px;
+            background: #FFFFFF;
+            box-shadow: 0px 13px 16px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            word-wrap: break-word;
+            h2{
+                margin: 0;
+            }
+        }
+    }
+}

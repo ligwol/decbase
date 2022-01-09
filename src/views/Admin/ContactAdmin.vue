@@ -1,25 +1,20 @@
 <template>
-  <div class="home">
-    <HeaderAdmin />
-    <FormPost />
-    <PostList />
-    <Footer />
-  </div>
+  <HeaderAdmin/>
+  <ContactMessages/>
+  <Footer/>
 </template>
 
 <script>
 import HeaderAdmin from '@/components/Admin/HeaderAdmin.vue'
-import FormPost from '@/components/Blog/FormPost.vue'
-import PostList from '@/components/Blog/PostList.vue'
+import ContactMessages from '@/components/Contact/ContactMessages.vue'
 import Footer from '@/components/Home/Footer.vue'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
-  name: 'Blog',
+  name: 'Contact',
   components: {
-    HeaderAdmin, 
-    FormPost,
-    PostList,
+    HeaderAdmin,
+    ContactMessages,
     Footer,
   },
   data() {
@@ -41,3 +36,7 @@ export default {
     },
 }
 </script>
+
+<style>
+
+</style>

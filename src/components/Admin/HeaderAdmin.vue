@@ -12,7 +12,7 @@
                 <router-link to="/about" class="link">About</router-link> 
                 <router-link to="/blog-admin" class="link">Blog</router-link>
                 <router-link to="/project" class="link">Shop</router-link>
-                <router-link to="/contact" class="link">Contact</router-link>
+                <router-link to="/contact-admin" class="link">Contact</router-link>
                 <router-link to="/account" class="link">Account</router-link>
             </div>
         </div>

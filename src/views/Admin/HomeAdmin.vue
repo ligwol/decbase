@@ -22,6 +22,7 @@ import Testimonials from '@/components/Home/Testimonials.vue'
 import LatestNews from '@/components/Home/LatestNews.vue'
 import Subscribe from '@/components/Home/Subscribe.vue'
 import Footer from '@/components/Home/Footer.vue'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   name: 'Home',
@@ -35,6 +36,23 @@ export default {
     LatestNews,
     Subscribe,
     Footer,
-  }, 
+  },
+  data() {
+        return {
+            user: null,
+        }
+    },
+    created() {
+        const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user)
+                this.user = user;
+            } else {
+                this.user = null;
+                this.$router.push('/login'); 
+            }
+            });
+    }, 
 }
 </script>

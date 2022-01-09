@@ -63,4 +63,5 @@ export default {
 <style lang="scss" scoped>
     @import "./../../styles/style.scss";
     @import "./../../styles/blog.scss";
+    @import "./../../styles/adaptive/adaptive-blog.scss";
 </style>

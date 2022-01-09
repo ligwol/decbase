@@ -1,0 +1,35 @@
+@media screen and (max-width: 850px){
+    .contact-form{
+        .contact-form__form{
+            input, .message{
+                width: 300px;
+            }
+        }
+    }
+    .contact-info{
+        .contact-info__data{
+            flex-wrap: wrap;
+        }
+        .contact-info__map{
+            iframe{
+                width: 300px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .contact-form{
+        .contact-form__form{
+            input, .message{
+                width: 200px;
+            }
+        }
+    }
+    .contact-messages{
+        .messages{
+            .message__info{
+                width: 200px;
+            }
+        }
+    }
+}
