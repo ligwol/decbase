@@ -10,7 +10,7 @@
             <router-link to="/project" class="link">Project</router-link>
             <router-link to="/services" class="link">Services</router-link>
             <router-link to="/blog" class="link">Blog</router-link>
-            <router-link to="/project" class="link">Shop</router-link>
+            <router-link to="/shop" class="link">Shop</router-link>
         </div>
   </div>
 </template>

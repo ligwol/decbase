@@ -1,0 +1,42 @@
+.project-content{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .project-content__block{
+        width: 100%;
+        margin: 0;
+        padding: 0 0;
+        button{
+            margin-top: 20px;
+            a{
+                color: #fff;
+                transition: 100ms ease;
+                &:hover{
+                    color: #646464;
+                }
+            }
+            &:hover {
+                background-color: #fff;
+                color: #646464;
+            }
+        }
+        .block__image{
+            margin: 40px 0;
+            img{
+                width: 100%;
+                border-radius: 30px 100px;
+            }
+        }
+    }
+
+}
+h1{
+    font-size: 40px;
+}
+hr{
+    margin: 10px;
+    width: 80vw;
+    border: 1px solid #C4C4C4;
+}
