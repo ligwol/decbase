@@ -16,6 +16,7 @@ import {getAuth} from 'firebase/auth';
 import Vue from 'vue'; 
 
 import VAnimateCss from 'v-animate-css';
+import { VueWindowSizePlugin } from 'vue-window-size/option-api';
 
 createApp(App).use(router).mount('#app')
 
@@ -44,3 +45,5 @@ app.use(PrimeVue);
 app.component('Dialog', Dialog);
 app.component('FileUpload', FileUpload);
 app.component('TextArea', TextArea);
+
+app.use(VueWindowSizePlugin);

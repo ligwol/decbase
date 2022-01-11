@@ -37,8 +37,11 @@ export default {
             mobileView: false,
         }
     },
-    mounted() {
-        this.handleView();
+    created() {
+        window.addEventListener("resize", this.myEventHandler);
+    },
+    unmounted() {
+        window.removeEventListener("resize", this.myEventHandler);
     },
     methods: {
         toggleANav: function(){
@@ -49,7 +52,7 @@ export default {
             window.onscroll = function () { window.scrollTop(0); };
             }
         },
-        handleView() {
+        myEventHandler() {
             if(window.innerWidth <= 1100){
                 this.mobileView = true;
             }else{
