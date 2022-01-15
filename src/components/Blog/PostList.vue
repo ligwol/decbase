@@ -3,7 +3,7 @@
         <div class="post" v-for="title, index in articleArray.title" :key="index">
             
             <div class="post__image">
-                <img class=" right" :src="require('../../assets/'+ articleArray.image[index])" alt="furniture pic">
+                <img class=" right" :src="articleArray.image[index]" alt="furniture pic">
             </div>
             <div class="post__content">
                 <h2>

@@ -5,6 +5,7 @@
             <!-- <input id="new-post" rows="7" v-model="newContent" placeholder="Tell us latest news"/> -->
             <Textarea id="new-post" v-model="newContent" :autoResize="true" rows="4" placeholder="Tell us latest news"/>
             <input id="new-photo" rows="1" v-model="newPhoto" placeholder="Image.jpg"/>
+            <!-- <input id="new-photo" rows="1" v-model="newPhoto" placeholder="Image.jpg"/> -->
         </div>
         <div class="form-post__button">
             <Button label="Create" @click="addNewPost" />
