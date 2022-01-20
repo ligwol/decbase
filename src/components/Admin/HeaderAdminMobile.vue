@@ -1,6 +1,6 @@
 <template>
+  <div class="header-shadow" v-on:click="$parent.toggleANav()"></div>
   <div class="header-mobile" v-if="!isHidden">
-        
         <div class="header-logo">
             <img src="../../assets/logo-full.png" alt="logo">
             <button v-on:click="$parent.toggleANav()"> <i class="fas fa-times"></i> </button>

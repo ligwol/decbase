@@ -1,4 +1,5 @@
 <template>
+<div class="header-shadow" v-on:click="$parent.toggleNav()"></div>
   <div class="header-mobile" v-if="!isHidden">
         
         <div class="header-logo">
@@ -15,7 +16,7 @@
             <router-link to="/contact" class="link">Contact</router-link>
         </div>
         <div class="header-signin">
-            <router-link to="/authorization" class="link">Sign In</router-link>
+            <router-link to="/login" class="link">Sign In</router-link>
         </div>
   </div>
 </template>

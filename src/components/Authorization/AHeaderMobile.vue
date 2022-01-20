@@ -1,4 +1,5 @@
 <template>
+<div class="header-shadow" v-on:click="$parent.toggleANav()"></div>
   <div class="header-mobile" v-if="!isHidden">
         
         <div class="header-logo">
