@@ -61,7 +61,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 40px;
+            padding: 80px;
             box-sizing: border-box;
             background-color: #fff;
             height: 400px;

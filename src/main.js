@@ -19,15 +19,10 @@ import { VueWindowSizePlugin } from 'vue-window-size/option-api';
 
 import Vue from 'vue'
 import VueMeta from 'vue-meta'
-import VuePageTitle from 'vue-page-title'
 import './styles/style.scss'
 
 createApp(App).use(router).mount('#app')
 
-Vue.use(VuePageTitle, {
-  // prefix: 'My App - ',
-  suffix: '- My App '
-})
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -58,3 +53,4 @@ app.component('TextArea', TextArea);
 app.use(VueWindowSizePlugin);
 
 Vue.use(VueMeta)
+

@@ -74,6 +74,5 @@ export default{
 </script>
 
 <style lang="scss" scoped>
-    @import "./../../styles/style.scss";
     @import "./../../styles/header.scss";
 </style>

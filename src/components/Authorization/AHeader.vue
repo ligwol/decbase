@@ -3,13 +3,14 @@
   <div class="authorization__header">
     <div class="authorization__header__links" v-if="!mobileView">
       <router-link class="authorization__header__link" to="/"> Home </router-link>
-      <router-link class="authorization__header__link" to="/Project"> Project </router-link>
+      <!-- <router-link class="authorization__header__link" to="/Project"> Project </router-link>
       <router-link class="authorization__header__link" to="/services"> services </router-link>
       <router-link class="authorization__header__link" to="/Blog"> blog </router-link>
-      <router-link class="authorization__header__link" to="/Shop"> shop </router-link>
+      <router-link class="authorization__header__link" to="/Shop"> shop </router-link> -->
     </div>
     <div class="header__click-button" v-if="mobileView" v-on:click="toggleANav">
-      <i class="fas fa-ellipsis-v"></i>
+      <!-- <i class="fas fa-ellipsis-v"></i> -->
+      <router-link class="authorization__header__link" to="/"> Home </router-link>
     </div>
   </div>
 
@@ -29,7 +30,8 @@ export default {
             mobileView: false,
         }
     },
-    created() {
+    mounted() {
+        this.myEventHandler();
         window.addEventListener("resize", this.myEventHandler);
     },
     unmounted() {

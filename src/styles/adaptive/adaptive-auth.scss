@@ -2,9 +2,16 @@
     .authorization {
         justify-content: center;
         align-items: center;
-
-        .authorization__header {
-            justify-content: flex-end;
+        .authorization__form{
+            .authorization__header {
+                display: flex;
+                justify-content: flex-end;
+                .header__click-button{
+                    // display: flex;
+                    // justify-content: flex-end;
+                    // margin: 0;
+                }
+            }
         }
         .images {
             display: none;
