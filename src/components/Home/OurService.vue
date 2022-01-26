@@ -73,7 +73,7 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel';
                 mobileView: false,
             }
         },
-        created() {
+        mounted() {
             window.addEventListener("resize", this.handleView);
         },
         unmounted() {

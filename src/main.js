@@ -13,12 +13,20 @@ const app = createApp(App);
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore"
 import {getAuth} from 'firebase/auth';
-import Vue from 'vue'; 
 
 import VAnimateCss from 'v-animate-css';
 import { VueWindowSizePlugin } from 'vue-window-size/option-api';
 
+import Vue from 'vue'
+import VueMeta from 'vue-meta'
+import VuePageTitle from 'vue-page-title'
+
 createApp(App).use(router).mount('#app')
+
+Vue.use(VuePageTitle, {
+  // prefix: 'My App - ',
+  suffix: '- My App '
+})
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -47,3 +55,5 @@ app.component('FileUpload', FileUpload);
 app.component('TextArea', TextArea);
 
 app.use(VueWindowSizePlugin);
+
+Vue.use(VueMeta)

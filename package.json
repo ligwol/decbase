@@ -21,6 +21,8 @@
     "vue-element-resize-detector": "^1.0.6",
     "vue-fabric-wrapper": "^0.3.71",
     "vue-loader": "^16.8.1",
+    "vue-meta": "^2.4.0",
+    "vue-page-title": "^1.2.5",
     "vue-resizable": "^2.0.5",
     "vue-resize": "^1.0.1",
     "vue-resize-directive": "^1.2.0",

@@ -16,7 +16,10 @@ export default {
     Header,
     ShopContent,
     Footer,
-  }
+  },
+  mounted(){
+        document.title = "Shop | Decbase"
+    }
 }
 </script>
 

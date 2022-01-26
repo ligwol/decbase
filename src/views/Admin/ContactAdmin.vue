@@ -34,6 +34,9 @@ export default {
             }
             });
     },
+    mounted(){
+          document.title = "Contacts | Decbase"
+      }
 }
 </script>
 

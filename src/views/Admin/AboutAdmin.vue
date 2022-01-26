@@ -27,6 +27,9 @@ export default {
     Subscribe,
     Footer,
   }, 
+  mounted(){
+        document.title = "About Us | Decbase"
+    }
 }
 </script>
 

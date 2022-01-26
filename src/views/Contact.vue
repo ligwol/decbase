@@ -17,7 +17,10 @@ export default {
     ContactForm,
     ContactInfo, 
     Footer,
-  }
+  },
+  mounted(){
+        document.title = "Contacts | Decbase"
+    }
 }
 </script>
 

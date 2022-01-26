@@ -39,5 +39,8 @@ export default {
             }
             });
     },
+    mounted(){
+          document.title = "Blog | Decbase"
+      }
 }
 </script>

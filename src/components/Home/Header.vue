@@ -20,10 +20,10 @@
             </div>
         </div>
         <div class="header__click-button" v-if="mobileView" v-on:click="toggleNav">
-           <!-- <i class="fas fa-ellipsis-v"></i> -->
+           <i class="fas fa-ellipsis-v"></i>
+           <!-- <span></span>
            <span></span>
-           <span></span>
-           <span></span>
+           <span></span> -->
         </div>
     </div>
 </template>
@@ -42,7 +42,8 @@ export default{
             mobileView: false,
         }
     },
-    created() {
+    mounted() {
+        this.myEventHandler();
         window.addEventListener("resize", this.myEventHandler);
     },
     unmounted() {
@@ -54,7 +55,7 @@ export default{
             if(!this.isHidden){
                 window.onscroll = function () { window.scrollTo(0, 0); };
             } else{
-            window.onscroll = function () { window.scrollTop(0); };
+                window.onscroll = function () { window.scrollTop(0); };
             }
         },
         myEventHandler() {

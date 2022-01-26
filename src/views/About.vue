@@ -18,7 +18,7 @@ import Subscribe from '@/components/Home/Subscribe.vue'
 import Footer from '@/components/Home/Footer.vue'
 
 export default {
-  name: 'Home',
+  name: 'About',
   components: {
     Header,
     AboutUs,
@@ -27,6 +27,9 @@ export default {
     Subscribe,
     Footer,
   }, 
+  mounted(){
+        document.title = "About Us | Decbase"
+    }
 }
 </script>
 

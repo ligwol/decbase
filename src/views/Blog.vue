@@ -17,6 +17,9 @@ export default {
     Header,
     PostList,
     Footer,
-  }
+  },
+  mounted(){
+        document.title = "Blog | Decbase"
+    }
 }
 </script>

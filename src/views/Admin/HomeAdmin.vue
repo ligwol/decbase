@@ -54,5 +54,8 @@ export default {
             }
             });
     }, 
+    mounted(){
+        document.title = "Home | Decbase"
+    }
 }
 </script>

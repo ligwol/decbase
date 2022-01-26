@@ -1,8 +1,4 @@
 @media screen and (max-width: 1100px){
-    
-    p{
-        font-size: 18px;
-    }
     .home-main{
         display: flex;
         flex-direction: column;
@@ -183,10 +179,20 @@
 }
 
 @media screen and (max-width: 650px){
-    .home-info{
-        h1{
-            font-size: 40px;
-            line-height: 45px;
+    .home{
+        margin: 10px;
+        .home-main{
+            margin: 0 20px;
+            font-size: 14px;
+            .home-info{
+                h1{
+                    font-size: 40px;
+                    line-height: 45px;
+                }
+                .home-info__text{
+                    font-size: 16px;
+                }
+            }
         }
     }
     .about-us__block{
@@ -203,13 +209,35 @@
         }
     }
     .our-service{
+        margin: 20px;
         h1{
             font-size: 30px;
             line-height: 35px;
         }
-        .block{
-            width: 300px;
+        
+        .block__txt{
+            width: 200px;
+            p{
+                font-size: 16px;
+            }
         }
+        .block{
+            width: 400px;
+        }
+    }
+    .about-us{
+        .about-us__block{
+            margin: 20px;
+            .about-us__info{
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .scheme{
+        padding: 20px;
+        background-color: #f8f8f8;
     }
     .testimonials{
         .block{
@@ -217,6 +245,7 @@
         }
     }
     .latest-news{
+        padding: 20px;
         h1{
             font-size: 40px;
             line-height: 45px;
