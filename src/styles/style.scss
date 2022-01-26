@@ -15,8 +15,9 @@ html{
 }
 body{
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    box-sizing: content-box;
+    margin: 0 !important;
+    //box-sizing: border-box;
+    overflow-x: hidden !important;
 }
 
 h1{

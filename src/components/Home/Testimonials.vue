@@ -88,10 +88,14 @@ export default {
             }
         },
         mounted() {
-            this.handleView();
+            this.myEventHandler();
+            window.addEventListener("resize", this.myEventHandler);
+        },
+        unmounted() {
+            window.removeEventListener("resize", this.myEventHandler);
         },
         methods: {
-            handleView() {
+            myEventHandler() {
                 if(window.innerWidth <= 1140){
                     this.mobileView = true;
                 }else{
